@@ -2,7 +2,9 @@
 
 #include "arcpch.h"
 
+#include <Arcane/Graphics/Camera/ICamera.h>
 #include <Arcane/Graphics/Mesh/Model.h>
+#include <Arcane/Physics/3D/Collider.h>
 
 namespace Arcane
 {
@@ -60,5 +62,13 @@ namespace Arcane
 	struct CameraComponent
 	{
 		Arcane::ICamera *camera;
+	};
+
+	struct RigidBodyComponent
+	{
+		float Mass = 1.0f; // Should be 0 for static objects
+		float Friction = 1.0f;
+		float Restitution = 0.0f; // [0, 1]   0 - inelastic collision     1 - perfectly elastic collision
+		Collider ColliderShape;
 	};
 }
