@@ -1,5 +1,8 @@
 #pragma once
 
+#include <Arcane/Physics/3D/PhysicsScene.h>
+#include <Arcane/Physics/3D/PhysicsSettings.h>
+
 namespace Arcane
 {
 	class Physics
@@ -11,7 +14,7 @@ namespace Arcane
 		static void CreateScene();
 		static void DestroyScene();
 	private:
-		static PhysicsScene s_Scene;
+		static PhysicsScene *s_Scene;
 		static PhysicsSettings s_Settings;
 	};
 }
