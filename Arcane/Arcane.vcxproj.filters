@@ -173,6 +173,7 @@
     <ClInclude Include="src\Arcane\Physics\3D\Physics.h" />
     <ClInclude Include="src\Arcane\Physics\3D\PhysicsSettings.h" />
     <ClInclude Include="src\Arcane\Physics\3D\PhysicsScene.h" />
+    <ClInclude Include="src\Arcane\Physics\3D\Collider.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\awesomeface.png" />

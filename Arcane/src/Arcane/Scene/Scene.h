@@ -27,6 +27,7 @@ namespace Arcane
 	class Scene
 	{
 		friend class Entity;
+		friend class PhysicsScene;
 		friend class ScenePanel;
 	public:
 		Scene(Window *window);

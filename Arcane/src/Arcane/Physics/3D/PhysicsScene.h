@@ -1,6 +1,7 @@
 #pragma once
 
 #include <Arcane/Physics/3D/PhysicsSettings.h>
+#include <Arcane/Scene/Scene.h>
 #include <btBulletDynamicsCommon.h>
 
 namespace Arcane
@@ -8,10 +9,12 @@ namespace Arcane
 	class PhysicsScene
 	{
 	public:
-		PhysicsScene(const PhysicsSettings &settings);
+		PhysicsScene(const PhysicsSettings &settings, Scene *scene);
 		~PhysicsScene();
 
 		void Simulate();
+	private:
+		void OnRigidBodyComponentCreate();
 	private:
 		PhysicsSettings m_Settings;
 
