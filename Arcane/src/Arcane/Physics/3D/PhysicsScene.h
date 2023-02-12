@@ -4,6 +4,8 @@
 #include <Arcane/Scene/Scene.h>
 #include <btBulletDynamicsCommon.h>
 
+#include "entt.hpp"
+
 namespace Arcane
 {
 	class PhysicsScene
@@ -14,9 +16,11 @@ namespace Arcane
 
 		void Simulate();
 	private:
-		void OnRigidBodyComponentCreate();
+		void OnRigidBodyComponentCreate(entt::registry &registry, entt::entity entityID);
+		void OnColliderComponentCreate(entt::registry &registry, entt::entity entityID);
 	private:
 		PhysicsSettings m_Settings;
+		Scene *m_Scene;
 
 		float m_Accumulator = 0.0f;
 		u32 m_NumSubSteps = 0;

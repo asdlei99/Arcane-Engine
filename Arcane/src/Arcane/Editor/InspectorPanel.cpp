@@ -26,6 +26,7 @@ namespace Arcane
 						DrawVec3Control("Translation", transform.Translation);
 						glm::vec3 rotation = glm::degrees(transform.Rotation);
 						DrawVec3Control("Rotation", rotation, 1.0f);
+						rotation = glm::mod(rotation, 360.0f);
 						transform.Rotation = glm::radians(rotation);
 						DrawVec3Control("Scale", transform.Scale);
 					}

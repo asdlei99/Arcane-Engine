@@ -1,6 +1,7 @@
 #pragma once
 
 #include <Arcane/Core/Assert.h>
+#include <Arcane/Defs.h>
 
 #ifdef ARC_PLATFORM_WINDOWS
 	#define GLFW_EXPOSE_NATIVE_WIN32
@@ -13,7 +14,7 @@
 
 #define ARC_BIND_EVENT_FN(fn) [this](auto&&... args) -> decltype(auto) { return this->fn(std::forward<decltype>(args)>(args)...); }
 
-#if defined(ARC_DEBUG) || defined(ARC_RELEASE)
+#if (USE_RENDERDOC && (defined(ARC_DEBUG) || defined(ARC_RELEASE)))
 #define ARC_RENDERDOC_DEBUG 
 #endif 
 

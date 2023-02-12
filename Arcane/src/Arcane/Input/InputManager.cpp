@@ -100,7 +100,7 @@ namespace Arcane
 	void InputManager::KeyCallback(int key, int scancode, int action, int mods) 
 	{
 		s_Keys[key] = action;
-		s_KeyPressure[key] = max(s_Keys[key], 1);
+		s_KeyPressure[key] = max(s_Keys[key], 1.0f);
 
 		if (action == GLFW_PRESS)
 		{
@@ -154,6 +154,6 @@ namespace Arcane
 		}
 #endif // ARC_DEV_BUILD
 
-		return s_Buttons[keyCode] == GLFW_REPEAT;
+		return s_Buttons[keyCode] == GLFW_PRESS;
 	}
 }

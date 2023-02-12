@@ -262,7 +262,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Arcane\Physics\3D\Collider.h" />
     <ClInclude Include="src\Arcane\Physics\3D\Physics.h" />
     <ClInclude Include="src\Arcane\Physics\3D\PhysicsScene.h" />
     <ClInclude Include="src\Arcane\Physics\3D\PhysicsSettings.h" />
