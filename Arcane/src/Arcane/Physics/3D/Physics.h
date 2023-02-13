@@ -14,8 +14,11 @@ namespace Arcane
 
 		static void CreateScene();
 		static void DestroyScene();
+
+		static void Update(float deltatime);
 	private:
-		static PhysicsScene *s_Scene;
+		static Scene *s_Scene;
+		static PhysicsScene *s_PhysicsScene;
 		static PhysicsSettings s_Settings;
 	};
 }

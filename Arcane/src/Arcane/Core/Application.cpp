@@ -1,18 +1,19 @@
 #include "arcpch.h"
 #include "Application.h"
 
+#include <Arcane/Core/Layer.h>
 #include <Arcane/Defs.h>
 #include <Arcane/Graphics/Window.h>
 #include <Arcane/Graphics/Renderer/Renderer.h>
 #include <Arcane/Graphics/Renderer/RenderPass/MasterRenderPass.h>
+#include <Arcane/ImGui/ImGuiLayer.h>
+#include <Arcane/Physics/3D/Physics.h>
+#include <Arcane/RenderdocManager.h>
 #include <Arcane/Scene/Scene.h>
 #include <Arcane/Util/Loaders/AssetManager.h>
 #include <Arcane/Util/Loaders/ShaderLoader.h>
 #include <Arcane/Util/Loaders/TextureLoader.h>
 #include <Arcane/Util/Time.h>
-#include <Arcane/Core/Layer.h>
-#include <Arcane/ImGui/ImGuiLayer.h>
-#include <Arcane/RenderdocManager.h>
 
 #include "glfw/glfw3native.h"
 
@@ -38,6 +39,8 @@ namespace Arcane
 		m_ActiveScene = new Scene(m_Window);
 		m_MasterRenderPass = new MasterRenderPass(m_ActiveScene);
 		m_InputManager = &InputManager::GetInstance();
+		//Physics::Init(m_ActiveScene);
+		//Physics::CreateScene();
 	}
 
 	Application::~Application()
@@ -49,6 +52,7 @@ namespace Arcane
 		}
 
 		Renderer::Shutdown();
+		Physics::Shutdown();
 
 		delete m_Window;
 		delete m_ActiveScene;

@@ -14,7 +14,7 @@ namespace Arcane
 		PhysicsScene(const PhysicsSettings &settings, Scene *scene);
 		~PhysicsScene();
 
-		void Simulate();
+		void Simulate(float deltatime);
 	private:
 		void OnRigidBodyComponentCreate(entt::registry &registry, entt::entity entityID);
 		void OnColliderComponentCreate(entt::registry &registry, entt::entity entityID);
@@ -22,8 +22,6 @@ namespace Arcane
 		PhysicsSettings m_Settings;
 		Scene *m_Scene;
 
-		float m_Accumulator = 0.0f;
-		u32 m_NumSubSteps = 0;
 		const u32 m_MaxSubSteps = 4;
 
 		// Bullet instances

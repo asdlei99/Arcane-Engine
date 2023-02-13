@@ -24,9 +24,9 @@ namespace Arcane
 
 	}
 
-	void PhysicsScene::Simulate()
+	void PhysicsScene::Simulate(float deltatime)
 	{
-
+		m_DiscreteDyanmicsWorld->stepSimulation(deltatime, m_MaxSubSteps, m_Settings.FixedTimestep);
 	}
 
 	void PhysicsScene::OnRigidBodyComponentCreate(entt::registry &registry, entt::entity entityID)
